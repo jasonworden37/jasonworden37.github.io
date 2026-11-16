@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jason Worden Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<style>
+  /* Layout: one readable column, an "at a glance" summary grid, then numbered policy sections. */
+  :root {
+    --bg: #f4f8fc;
+    --surface: #ffffff;
+    --ink: #2d3047;
+    --muted: #5d6178;
+    --line: #dde4ee;
+    --sky: #4cc9f0;
+    --accent: #5b5fef;
+    --font-display: "Nunito", "Arial Rounded MT Bold", system-ui, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12141f; --surface: #1b1e2d; --ink: #eef0fa; --muted: #a6abc4;
+      --line: #2c3046; --sky: #4cc9f0; --accent: #9a9dff; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #12141f; --surface: #1b1e2d; --ink: #eef0fa; --muted: #a6abc4;
+    --line: #2c3046; --sky: #4cc9f0; --accent: #9a9dff; color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 400 16px/1.65 var(--font-body);
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-block: 48px 64px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    display: grid;
+    gap: 40px;
+  }
+  header { display: grid; gap: 10px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    font: 900 15px/1 var(--font-display); letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent);
+  }
+  .badge i {
+    width: 22px; height: 22px; border-radius: 7px; background: var(--accent);
+    position: relative; display: inline-block;
+  }
+  .badge i::before, .badge i::after {
+    content: ""; position: absolute; top: 7px; width: 5px; height: 5px;
+    border-radius: 50%; background: #fff;
+  }
+  .badge i::before { left: 6px; } .badge i::after { right: 6px; }
+  h1 {
+    font: 900 clamp(2rem, 6vw, 2.75rem)/1.1 var(--font-display);
+    margin: 0; text-wrap: balance;
+  }
+  .meta { color: var(--muted); margin: 0; font-size: 0.95rem; }
+
+  .glance {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  .glance div {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 18px; display: grid; gap: 4px; min-width: 0;
+  }
+  .glance b { font: 800 1.02rem/1.3 var(--font-display); }
+  .glance span { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+
+  section { display: grid; gap: 10px; }
+  h2 {
+    font: 800 1.35rem/1.25 var(--font-display); margin: 0; text-wrap: balance;
+    display: flex; gap: 12px; align-items: baseline;
+  }
+  h2 small {
+    font: 800 0.8rem/1 var(--font-display); color: var(--accent);
+    font-variant-numeric: tabular-nums; letter-spacing: 0.06em;
+  }
+  p, li { max-width: 65ch; }
+  p { margin: 0; }
+  ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+  .contact {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 20px; display: grid; gap: 6px;
+  }
+  .email {
+    font: 600 1.05rem/1.3 var(--font-body); user-select: all; word-break: break-all;
+  }
+  footer { color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--line); padding-top: 18px; }
+</style>
+<style>
+  .links { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+  .links a {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 18px; display: grid; gap: 4px; text-decoration: none; color: var(--ink);
+  }
+  .links a b { font: 800 1.02rem/1.3 var(--font-display); color: var(--accent); }
+  .links a span { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+  .links a:hover { border-color: var(--accent); }
+  .faq { display: grid; gap: 18px; }
+  .faq div { display: grid; gap: 4px; }
+  .faq b { font: 800 1.05rem/1.35 var(--font-display); }
+  .faq p { color: var(--ink); }
+</style>
+
+</head>
+<body style="margin:0">
+<main class="page">
+  <header>
+    <span class="badge"><i></i>Jason Worden</span>
+    <h1>Flipshift</h1>
+    <p class="meta">A one-tap gravity-flipping game for iPhone. Flip between the floor and the ceiling, dodge the walls, and chase your best score.</p>
+  </header>
+
+  <nav class="links" aria-label="Flipshift pages">
+    <a href="flipshift/support.html"><b>Support</b><span>Help, common questions and contact.</span></a>
+    <a href="flipshift/privacy.html"><b>Privacy Policy</b><span>What information Flipshift uses and why.</span></a>
+  </nav>
+
+  <footer>&copy; 2026 Jason Worden</footer>
+</main>
+</body>
+</html>
